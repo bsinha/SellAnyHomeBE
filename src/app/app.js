@@ -6,6 +6,8 @@ const express = require('express'),
 const categoryRoutes = require('../service/categoryService');
 const propertyRoutes = require('../service/propertyService');
 const propertySearchRoutes = require('../service/propertySearchService');
+const neighbourRoutes = require('../service/neighbourService');
+const newsRoutes = require('../service/newsService');
 
 const mongo = require('../config/app-mongo.js');
 
@@ -33,5 +35,7 @@ app.use((req, res, next) => {
 app.use('/api/categories', categoryRoutes);
 app.use('/api/property', propertyRoutes);
 app.use('/api/search', propertySearchRoutes);
+app.use('/api/neighbour', neighbourRoutes);
+app.use('/api/news', newsRoutes);
 
 module.exports = app;
